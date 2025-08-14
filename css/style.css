@@ -1,0 +1,148 @@
+body{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+*,*:before, *:after{
+  box-sizing: inherit;
+  font-family:Arial, Helvetica, sans-serif
+}
+/* ---------------form---------------*/
+#body-form{
+  background: linear-gradient(135deg, #f2f2f2, #d7d7d7) fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin: 30px auto;
+} 
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  text-align: left;
+  gap:20px
+}
+.registrarse{
+  display: none;
+}
+.form-container>h1{
+  font-size: 20px;
+  color:#202020;
+  margin-bottom: 15px;
+}
+
+
+.btn-selection{
+  background-color: rgba(250, 250, 250, 0.789);
+  color:rgb(12, 12, 12);
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-selection:hover{
+  background-color: rgb(245, 233, 233);
+  color: black
+}
+.btn-enviar{
+  background-color: rgba(250, 250, 250, 0.798);
+  color:rgb(12, 12, 12);
+  padding: 10px 20px;
+  border: 10px; 
+  font-size:15px;
+  cursor:pointer;
+  margin-top:8px;
+}
+.btn-enviar:hover{
+  border-radius: 6px;
+  transition: 0.3s;
+  background-color: #020202;
+  color: rgb(248, 240, 240)
+ 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  padding: 10px;
+  border: 1px solid #333;
+  font-size:15px;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+/* ------------------------PASSWORD------------------------*/
+.password-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 5px; 
+    width: 100%;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-wrapper input {
+    flex: 1;
+    padding-right: 35px; 
+}
+
+.input-wrapper img {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.forgot-password {
+    text-align: right;
+    margin: 5px 0 15px 0;
+}
+
+.forgot-password a {
+    font-size: 15px;
+    color: #0d0d0d;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.forgot-password a:hover {
+    color: #c8102e; /* Rojo RIFLE */
+}
+
+
+/* ---------------RESPONSIVE--------------- */
+@media (max-width:480px){
+  .form-container{
+    padding: 20px;
+  }
+  .btn.selection{
+    width: 100%;
+  }
+}
+
+/* ---------------para Js--------------- */
+.oculto{
+  display: none;
+  transition: 0.5s;
+}
+.activo{
+  display:block;
+  transition: 0.5s;
+}
+
+.incorrecto{
+  outline: solid red 1px;
+}
+
