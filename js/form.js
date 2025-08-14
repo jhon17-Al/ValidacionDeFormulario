@@ -24,11 +24,33 @@ const PASSWORD = document.getElementById("password-login");
 const CONFIRM_PASSWORD = document.getElementById("confirm-password-login");
 
 FORM.addEventListener("submit", function (event) {
-  if (PASSWORD.value !== CONFIRM_PASSWORD.value) {
-    alert("la contraseña no coincide");
+  let valid = true;
+  // Validar email
+  const emailInput = document.getElementById("email-login");
+  if (!REGEX_PATTERNS.email.test(emailInput.value)) {
+    emailInput.classList.add("incorrecto");
+    valid = false;
+  }
+  // Validar password
+  if (!REGEX_PATTERNS.password.test(PASSWORD.value)) {
+    PASSWORD.classList.add("incorrecto");
+    valid = false;
+  }
+  // Validar confirmación de password
+  if (PASSWORD.value !== CONFIRM_PASSWORD.value || !REGEX_PATTERNS.password.test(CONFIRM_PASSWORD.value)) {
+    CONFIRM_PASSWORD.classList.add("incorrecto");
+    valid = false;
+  }
+  // Validar nombre si existe
+  const nameInput = document.getElementById("name-login");
+  if (nameInput && !REGEX_PATTERNS.nombre.test(nameInput.value)) {
+    nameInput.classList.add("incorrecto");
+    valid = false;
+  }
+  if (!valid) {
+    alert("Por favor, corrija los campos marcados antes de continuar.");
     event.preventDefault();
   }
-
 });
 /* ----------------show password---------------- */
 const ShowPassword = document.getElementsByClassName("show-password");
